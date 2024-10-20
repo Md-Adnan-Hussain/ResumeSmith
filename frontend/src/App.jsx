@@ -11,7 +11,7 @@ import ResumePreview from './pages/ResumePreview';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
+      <div className="app min-h-screen bg-gray-100/75">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

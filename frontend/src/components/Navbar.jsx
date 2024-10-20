@@ -12,8 +12,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-slate-600 text-blue-500 p-4">
+      <div className="container-fluid mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 text-xl font-bold">
           <FileText size={24} />
           <span>ResumeSmith</span>
@@ -29,10 +29,7 @@ const Navbar = () => {
             <Link to="/login" className="hover:text-blue-200">
               Login
             </Link>
-            <Link
-              to="/signup"
-              className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100"
-            >
+            <Link to="/signup" className="hover:text-blue-200">
               Sign Up
             </Link>
           </div>

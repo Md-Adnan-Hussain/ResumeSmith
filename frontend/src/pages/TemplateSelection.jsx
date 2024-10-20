@@ -46,19 +46,23 @@ const TemplateSelection = () => {
         {templates.map((template) => (
           <div
             key={template.id}
-            className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+            className="flex flex-col justify-between bg-blue-100 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
           >
-            <img
-              src={template.preview}
-              alt={template.name}
-              className="w-full h-48 object-cover"
-            />
+            <div>
+              <img
+                src={template.preview}
+                alt={template.name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-2xl font-semibold mb-2">{template.name}</h3>
+                <p className="text-gray-600 mb-4">{template.description}</p>
+              </div>
+            </div>
             <div className="p-4">
-              <h3 className="text-xl font-semibold mb-2">{template.name}</h3>
-              <p className="text-gray-600 mb-4">{template.description}</p>
               <button
                 onClick={() => handleTemplateSelect(template.id)}
-                className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300 w-full"
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 w-full"
               >
                 Select Template
               </button>

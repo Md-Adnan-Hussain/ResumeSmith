@@ -123,66 +123,69 @@ const ResumePreview = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-6">
-        Resume Preview - {template.name}
-      </h2>
-      <style>{template.styles}</style>
-      <div className="resume-preview mb-6">
-        <div className="container">
-          <h1>{user.name}</h1>
-          <div className="contact">{user.email}</div>
+    <div className="py-12">
+      <div className="container bg-white mx-auto px-4 py-8">
+        <h2 className="text-2xl font-bold mb-6">
+          Resume Preview - {template.name}
+        </h2>
+        <style>{template.styles}</style>
+        <div className="resume-preview mb-6">
+          <div className="container">
+            <h1>{user.name}</h1>
+            <div className="contact">{user.email}</div>
 
-          <div className="section">
-            <h2>Education</h2>
-            {user.education.map((edu, index) => (
-              <div key={index} className="mb-2">
-                <p className="font-semibold">{edu.degree}</p>
-                <p>
-                  {edu.institution}, {edu.year}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="section">
-            <h2>Skills</h2>
-            <ul className="list-disc pl-5">
-              {user.skills.map((skill, index) => (
-                <li key={index}>{skill}</li>
+            <div className="section">
+              <h2>Education</h2>
+              {user.education.map((edu, index) => (
+                <div key={index} className="mb-2">
+                  <p className="font-semibold">{edu.degree}</p>
+                  <p>
+                    {edu.institution}, {edu.year}
+                  </p>
+                </div>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="section">
-            <h2>Work Experience</h2>
-            {user.workExperience.map((exp, index) => (
-              <div key={index} className="mb-4">
-                <p className="job-title">{exp.position}</p>
-                <p>
-                  <span className="company">{exp.company}</span>, {exp.duration}
-                </p>
-              </div>
-            ))}
+            <div className="section">
+              <h2>Skills</h2>
+              <ul className="list-disc pl-5">
+                {user.skills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="section">
+              <h2>Work Experience</h2>
+              {user.workExperience.map((exp, index) => (
+                <div key={index} className="mb-4">
+                  <p className="job-title">{exp.position}</p>
+                  <p>
+                    <span className="company">{exp.company}</span>,{" "}
+                    {exp.duration}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="flex justify-between">
-        <button
-          onClick={() => navigate("/templates")}
-          className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 flex items-center"
-        >
-          <ChevronLeft className="mr-2" size={20} />
-          Change Template
-        </button>
-        <button
-          onClick={handleDownload}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center"
-        >
-          <Download className="mr-2" size={20} />
-          Download PDF
-        </button>
+        <div className="flex justify-between">
+          <button
+            onClick={() => navigate("/templates")}
+            className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 flex items-center"
+          >
+            <ChevronLeft className="mr-2" size={20} />
+            Change Template
+          </button>
+          <button
+            onClick={handleDownload}
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center"
+          >
+            <Download className="mr-2" size={20} />
+            Download PDF
+          </button>
+        </div>
       </div>
     </div>
   );
